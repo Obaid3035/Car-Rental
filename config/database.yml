@@ -8,7 +8,7 @@ development:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: rental_development
+  database: car_development
   pool:     5
   username: mr.aliahmed
   password:
@@ -21,7 +21,7 @@ test:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: rental_test
+  database: car_test
   pool:     5
   username: mr.aliahmed
   password:
@@ -31,7 +31,7 @@ production:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: rental_production
+  database: car_production
   pool:     5
   username: mr.aliahmed
   password:
