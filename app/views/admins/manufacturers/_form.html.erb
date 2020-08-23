@@ -1,0 +1,4 @@
+<%= bootstrap_form_for [:admins, @manufacturer], remote: true, data: { controller: 'modal-form-errors', action: 'ajax:error->modal-form-errors#renderErrors' } do |f|%>
+  <%= f.text_field :name %>
+  <%= f.submit class: "btn btn-primary", style: "margin-left: 140px" %>
+<% end %>
