@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_23_213722) do
+ActiveRecord::Schema.define(version: 2020_08_24_193114) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,11 +27,30 @@ ActiveRecord::Schema.define(version: 2020_08_23_213722) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "bookings", force: :cascade do |t|
+    t.string "client_name"
+    t.string "father_name"
+    t.string "cnic"
+    t.string "address"
+    t.string "telephone"
+    t.integer "daily_rate"
+    t.datetime "duration"
+    t.integer "advance_deposit"
+    t.integer "balance"
+    t.integer "total"
+    t.bigint "cars_id"
+    t.bigint "manufacturers_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cars_id"], name: "index_bookings_on_cars_id"
+    t.index ["manufacturers_id"], name: "index_bookings_on_manufacturers_id"
+  end
+
   create_table "cars", force: :cascade do |t|
     t.string "name"
     t.integer "year"
     t.string "license_plate"
-    t.bigint "manufacturer_id", null: false
+    t.bigint "manufacturer_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["manufacturer_id"], name: "index_cars_on_manufacturer_id"
@@ -43,5 +62,4 @@ ActiveRecord::Schema.define(version: 2020_08_23_213722) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "cars", "manufacturers"
 end
