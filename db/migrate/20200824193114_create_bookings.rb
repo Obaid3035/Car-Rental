@@ -6,14 +6,13 @@ class CreateBookings < ActiveRecord::Migration[6.0]
       t.string :cnic
       t.string :address
       t.string :telephone
+      t.integer :duration
       t.integer :daily_rate
-      t.datetime :duration
+      t.datetime :rent_start_date
       t.integer :advance_deposit
       t.integer :balance
       t.integer :total
-      t.references :cars, null: true, foreign_key: false
-      t.references :manufacturers, null: true, foreign_key: false
-
+      t.references :car, null: true, foreign_key: false
       t.timestamps
     end
   end

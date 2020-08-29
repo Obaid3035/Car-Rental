@@ -33,17 +33,16 @@ ActiveRecord::Schema.define(version: 2020_08_24_193114) do
     t.string "cnic"
     t.string "address"
     t.string "telephone"
+    t.integer "duration"
     t.integer "daily_rate"
-    t.datetime "duration"
+    t.datetime "rent_start_date"
     t.integer "advance_deposit"
     t.integer "balance"
     t.integer "total"
-    t.bigint "cars_id"
-    t.bigint "manufacturers_id"
+    t.bigint "car_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["cars_id"], name: "index_bookings_on_cars_id"
-    t.index ["manufacturers_id"], name: "index_bookings_on_manufacturers_id"
+    t.index ["car_id"], name: "index_bookings_on_car_id"
   end
 
   create_table "cars", force: :cascade do |t|

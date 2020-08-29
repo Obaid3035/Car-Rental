@@ -7,12 +7,17 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+
   </head>
 
   <body>
     <%= render 'layouts/admin_component/navigation' %>
-    <%= yield %>
+    <div style="padding-left: 250px">
+      <%= yield %>
+    </div>
 
+    <%= render 'layouts/admin_component/footer' %>
     <div id="modalContainer"></div>
   </body>
 </html>

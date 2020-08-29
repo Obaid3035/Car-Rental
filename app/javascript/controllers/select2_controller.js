@@ -9,5 +9,9 @@ export default class extends Controller {
     $('#car_manufacturer_id').select2({
       theme: "classic"
     });
+    $('#booking_car_id').select2({
+      theme: "classic"
+    });
+
   }
 }

@@ -1,0 +1,98 @@
+<div class="content">
+  <div class="container-fluid">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-primary">
+            <h4 class="card-title">Create Booking</h4>
+            <p class="card-category">Complete your Booking</p>
+          </div>
+          <div class="card-body" data-controller="calculation">
+            <%= form_for [:admins, @booking] do |f|%>
+
+              <div class="row">
+                <div class="col-md-5">
+                  <div class="form-group">
+                    <%= f.label :client_name, class:"bmd-label-floating " %>
+                    <%= f.text_field :client_name,class: "form-control"%>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <%= f.label :father_name, class:"bmd-label-floating " %>
+                    <%= f.text_field :father_name,class: "form-control"%>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                      <%= f.label :cnic, class:"bmd-label-floating " %>
+                      <%= f.text_field :cnic,class: "form-control"%>
+                    </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <%= f.label :address, class:"bmd-label-floating " %>
+                    <%= f.text_field :address,class: "form-control"%>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <%= f.label :telephone, class:"bmd-label-floating " %>
+                    <%= f.text_field :telephone,class: "form-control"%>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <div data-controller="select2" class="selectbox">
+                      <%= f.label :car_id, class:"bmd-label-floating " %>
+                      <%= collection_select(:booking, :car_id, Car.all, :id, :name,{prompt: true},class: "bigdrop") %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <%= f.label :duration, class:"bmd-label-floating" %>
+                    <%= f.text_field :duration,class: "form-control",data:{target:"total.duration"}%>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <%= f.label :daily_rate, class:"bmd-label-floating " %>
+                    <%= f.text_field :daily_rate,class: "form-control"%>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <%= f.label :advance_deposit, class:"bmd-label-floating " %>
+                    <%= f.text_field :advance_deposit,class: "form-control"%>
+                  </div>
+                </div>
+
+              </div>
+              <div class="row">
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <%= f.label :balance, class:"bmd-label-floating " %>
+                    <%= f.text_field :balance,class: "form-control", readonly: true , style: "padding-left: 5px;"%>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <%= f.label :total, class:"bmd-label-floating " %>
+                    <%= f.text_field :total,class: "form-control",readonly: true , style: "padding-left: 5px;"%>
+                  </div>
+                </div>
+              </div>
+              <%= f.submit class: "btn btn-primary"%>
+          <% end %>
+          </div>
+
+        </div>
+
+    </div>
+  </div>
+</div>
