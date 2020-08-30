@@ -21,7 +21,6 @@ module Admins
 
     def edit
       render layout: false
-
     end
 
     def update
@@ -44,7 +43,7 @@ module Admins
       end
 
       def car_params
-        params.require(:car).permit(:name, :year, :license_plate, :manufacturer_id, :created_at, :updated_at)
+        params.require(:car).permit(:name, :brand_id, :created_at, :updated_at)
       end
 
   end

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   namespace :admins do
     root 'homes#dashboard'
-    resources :manufacturers
+    resources :brands
     resources :cars
     resources :bookings
   end
