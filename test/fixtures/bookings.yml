@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  client_name: MyString
+  father_name: MyString
+  cnic: MyString
+  address: MyString
+  telephone: MyString
+  daily_rate: 1
+  duration: 2020-08-25 00:31:14
+  advance_deposit: 1
+  balance: 1
+  total: 1
+  cars: one
+  manufacturers: one
+
+two:
+  client_name: MyString
+  father_name: MyString
+  cnic: MyString
+  address: MyString
+  telephone: MyString
+  daily_rate: 1
+  duration: 2020-08-25 00:31:14
+  advance_deposit: 1
+  balance: 1
+  total: 1
+  cars: two
+  manufacturers: two

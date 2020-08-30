@@ -1,0 +1,88 @@
+<div class="content">
+  <div class="container-fluid">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header card-header-primary">
+          <div class="row">
+            <div class="col-md-8">
+          <h4 class="card-title">Create Booking</h4>
+          <p class="card-category">Complete your Booking</p>
+            </div>
+            <div class="col-md-4">
+            <h4 style="float: right">Report Created At</h4>
+              <p style="float: right"><%=@booking.rent_start_date %></p>
+            </div>
+          </div>
+
+        </div>
+        <div class="card-body">
+            <h3>Customer Detail</h3>
+          <div class="row">
+          <div class="col-md-6">
+            <div class="row" style="align-items: center">
+             <h4 style="padding-left: 20px; font-weight: bold">Name:</h4>
+              <h4 style="padding-left: 20px"><%=@booking.client_name%></h4>
+            </div>
+          <div class="row" style="align-items: center">
+            <h4 style="padding-left: 20px; font-weight: bold">Father Name:</h4>
+            <h4 style="padding-left: 20px"><%=@booking.father_name%></h4>
+          </div>
+          <div class="row" style="align-items: center">
+            <h4 style="padding-left: 20px; font-weight: bold">Cnic no:</h4>
+            <h4 style="padding-left: 20px"><%=@booking.cnic%></h4>
+          </div>
+          <div class="row" style="align-items: center">
+            <h4 style="padding-left: 20px; font-weight: bold">Address:</h4>
+            <h4 style="padding-left: 20px"><%=@booking.address%></h4>
+          </div>
+
+
+          <div class="row" style="align-items: center">
+            <h4 style="padding-left: 20px; font-weight: bold">Car:</h4>
+            <h4 style="padding-left: 20px"><%=@booking.car.name%></h4>
+          </div>
+          <div class="row" style="align-items: center">
+            <h4 style="padding-left: 20px; font-weight: bold">Manufacturer:</h4>
+            <h4 style="padding-left: 20px"><%=@booking.car.manufacturer.name%></h4>
+          </div>
+
+          </div>
+
+          <div class="col-md-6">
+            <div class="row" style="align-items: center">
+              <h4 style="padding-left: 20px; font-weight: bold">Rental Period:</h4>
+              <h4 style="padding-left: 20px"><%=@booking.duration%> Days</h4>
+            </div>
+
+              <div class="row" style="align-items: center">
+                <h4 style="padding-left: 20px; font-weight: bold">Car Daily Rate:</h4>
+                <h4 style="padding-left: 20px"><%=@booking.daily_rate%></h4>
+              </div>
+
+
+              <div class="row" style="align-items: center">
+                <h4 style="padding-left: 20px; font-weight: bold">Advance Deposit:</h4>
+                <h4 style="padding-left: 20px"><%=@booking.advance_deposit%></h4>
+              </div>
+
+            <div class="row" style="align-items: center">
+              <h4 style="padding-left: 20px; font-weight: bold">Balance:</h4>
+              <h4 style="padding-left: 20px"><%=@booking.balance%></h4>
+            </div>
+            <div class="row" style=" background-color: #b0adad; width: 50%;">
+              <h4 style="padding-left: 20px; font-weight: bold; margin-top: 5px;">Total:</h4>
+              <h4 style="padding-left: 20px; margin-top: 5px"><%=@booking.total%></h4>
+            </div>
+
+            </div>
+          </div>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

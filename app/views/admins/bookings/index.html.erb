@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <div class="col-sm-12">
+    <div class="container" style="background-color: white; border-radius: 25px;">
+    <table class="table">
+
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Father's Name</th>
+        <th>Phone</th>
+        <th>Advance Deposit</th>
+        <th>Balance</th>
+        <th>Total</th>
+        <th>Created At</th>
+        <th>Updated At</th>
+      </tr>
+      <tbody>
+      <% @bookings.each do |booking| %>
+        <tr>
+          <th><%=booking.id%></th>
+          <td><%=booking.client_name%></td>
+          <td><%=booking.father_name%></td>
+          <td><%=booking.telephone%></td>
+          <td><%=booking.advance_deposit%></td>
+          <td><%=booking.balance%></td>
+          <td><%=booking.total%></td>
+          <td><%=booking.created_at%></td>
+          <td><%=booking.updated_at%></td>
+          <td><%= link_to 'Show', admins_booking_path(booking)%></td>
+          <td><%= link_to 'Edit', edit_admins_booking_path(booking), remote: true, data: { controller: 'open-form-modal', action: 'ajax:success->open-form-modal#openModal' } %></td>
+          <td><%= link_to 'Delete', admins_booking_path(booking),
+                          method: :delete,
+                          data: { confirm: 'Are you sure' } %> </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+    </div>
+    <%= link_to "Create", new_admins_booking_path, class: "btn btn-primary" %>
+  </div>
+</div>
