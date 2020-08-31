@@ -1,0 +1,92 @@
+<div class="content">
+  <div class="container-fluid">
+    <div class="col-md-12" style="text-align: center; ">
+      <div class="card">
+        <div class="card-header card-header-primary">
+          <h4 class="card-title">Create Vehicle</h4>
+          <p class="card-category">Complete your Vehicle</p>
+        </div>
+        <div class="row" style="align-items: center">
+        <div class="col-md-8">
+        <div class="card-body" data-controller="dynamic" style="float: right;display: flex;">
+          <%= form_for [:admins, @vehicle] do |f|%>
+
+            <div class="card">
+              <div class="card-body">
+
+                <div class="form-group">
+                  <div data-controller="select2">
+                    <div class="row">
+                      <div class="col-md-3">
+                    <%= f.label :brand_id, class:"bmd-label-floating " %>
+                        </div>
+                    <div class="col-md-9">
+                    <%= collection_select(:vehicle, :brand_id, Brand.all, :id, :name,{prompt: true},class: "bigdrop") %>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="form-group">
+                  <div data-controller="select2">
+                    <div class="row">
+                      <div class="col-md-3">
+                    <%= f.label :car_id, class:"bmd-label-floating " %>
+                      </div>
+                      <div class="col-md-9">
+                    <%= f.grouped_collection_select(:car_id, Brand.order(:name), :cars, :name, :id, :name,{prompt: true},class: "bigdrop") %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div data-controller="select2">
+                  <div class="row">
+                  <div class="col-md-3">
+                  <%= f.label :year, class:"bmd-label-floating " %>
+                </div>
+              <div class="col-md-9">
+                <%= f.select :year, options_for_select(2000..2050), { prompt: true }, class: "bigdrop" %>
+              </div>
+                  </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="row align-items-center">
+                    <div class="col-md-3">
+                  <%= f.label :reg_no, class:"bmd-label-floating", style: "padding-top:20px" %>
+                    </div>
+                    <div class="col-md-9">
+                  <%= f.text_field :reg_no,class: "form-control"%>
+                    </div>
+
+                  </div>
+                </div>
+            </div>
+
+            <%= f.submit class: "btn btn-primary"%>
+            </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="brand">
+              <p>Brand not available?</p><br>
+              <%= link_to "Add it to the list", new_admins_brand_path, remote: true, data: { controller: 'open-form-modal', action: 'ajax:success->open-form-modal#openModal' }, class: "Add" %>
+              </div>
+              <div class="car">
+                <p >Car not available?</p><br>
+                <%= link_to "Add it to the list", new_admins_car_path, remote: true, data: { controller: 'open-form-modal', action: 'ajax:success->open-form-modal#openModal' }, class: "Addcar" %>
+              </div>
+            </div>
+
+            </div>
+            </div>
+          <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>

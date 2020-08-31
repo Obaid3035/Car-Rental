@@ -1,0 +1,36 @@
+<div class="container-fluid">
+  <div class="col-sm-12">
+    <div class="container" style="background-color: white; border-radius: 25px;">
+      <table class="table">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Brand</th>
+          <th scope="col">Car</th>
+          <th scope="col">Year</th>
+          <th scope="col">Reg-No</th>
+          <th scope="col">Created At</th>
+          <th scope="col">Updated At</th>
+        </tr>
+        <tbody>
+        <% @vehicle.each do |vehicle| %>
+          <tr>
+            <th><%=vehicle.id%></th>
+            <td><%=vehicle.brand.name%></td>
+            <td><%=vehicle.car.name%></td>
+            <td><%=vehicle.year%></td>
+            <td><%=vehicle.reg_no%></td>
+            <td><%=vehicle.created_at%></td>
+            <td><%=vehicle.updated_at%></td>
+            <td><%= link_to 'Edit', edit_admins_vehicle_path(vehicle), remote: true, data: { controller: 'open-form-modal', action: 'ajax:success->open-form-modal#openModal' } %></td>
+            <td><%= link_to 'Delete', admins_vehicle_path(vehicle),
+                            method: :delete,
+                            data: { confirm: 'Are you sure' } %> </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+    <%= link_to "Create", new_admins_vehicle_path, class: "btn btn-primary" %>
+
+  </div>
+</div>

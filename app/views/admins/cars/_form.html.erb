@@ -1,9 +1,7 @@
 <%= bootstrap_form_for [:admins, @car], remote: true, data: { controller: 'modal-form-errors', action: 'ajax:error->modal-form-errors#renderErrors' } do |f|%>
   <%= f.text_field :name %>
-  <%= f.text_field :license_plate %>
-  <%= f.text_field :year %>
   <div data-controller="select2">
-    <%= collection_select(:car, :manufacturer_id, Manufacturer.all, :id, :name, class: "manufacturer_select") %>
+    <%= collection_select(:car, :brand_id, Brand.all, :id, :name,{} ,style: "width:100px;") %>
   </div>
   <%= f.submit class: "btn btn-primary", style: "margin-left: 140px" %>
 <% end %>

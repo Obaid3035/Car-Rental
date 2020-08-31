@@ -5,9 +5,7 @@
       <tr>
         <th scope="col">ID</th>
         <th scope="col">Name</th>
-        <th scope="col">Year</th>
-        <th scope="col">License Plate</th>
-        <th scope="col">Manufacturer</th>
+        <th scope="col">Brand</th>
         <th scope="col">Created At</th>
         <th scope="col">Updated At</th>
       </tr>
@@ -16,9 +14,7 @@
         <tr>
           <th><%=car.id%></th>
           <td><%=car.name%></td>
-          <td><%=car.year%></td>
-          <td><%=car.license_plate%></td>
-          <td><%=car.manufacturer.name%></td>
+          <td><%=car.brand.name%></td>
           <td><%=car.created_at%></td>
           <td><%=car.updated_at%></td>
           <td><%= link_to 'Edit', edit_admins_car_path(car), remote: true, data: { controller: 'open-form-modal', action: 'ajax:success->open-form-modal#openModal' } %></td>
@@ -30,7 +26,5 @@
       </tbody>
     </table>
     </div>
-    <%= link_to "Create", new_admins_car_path, remote: true, data: { controller: 'open-form-modal', action: 'ajax:success->open-form-modal#openModal' }, class: "btn btn-primary" %>
-
   </div>
 </div>

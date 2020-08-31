@@ -1,3 +1,3 @@
 class Car < ApplicationRecord
-  belongs_to :manufacturer, optional: true
+  belongs_to :brand, optional: true
 end

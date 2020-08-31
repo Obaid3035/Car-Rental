@@ -13,7 +13,7 @@ module Admins
     def create
       @car = Car.new(car_params)
       if @car.save!
-        redirect_to admins_cars_path
+        redirect_to new_admins_vehicle_path
       else
         render 'new', layout: false, status: :ok
       end
@@ -21,7 +21,6 @@ module Admins
 
     def edit
       render layout: false
-
     end
 
     def update
@@ -44,7 +43,7 @@ module Admins
       end
 
       def car_params
-        params.require(:car).permit(:name, :year, :license_plate, :manufacturer_id, :created_at, :updated_at)
+        params.require(:car).permit(:name, :brand_id, :created_at, :updated_at)
       end
 
   end
