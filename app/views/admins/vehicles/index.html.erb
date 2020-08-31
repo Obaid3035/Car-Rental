@@ -15,8 +15,8 @@
         <% @vehicle.each do |vehicle| %>
           <tr>
             <th><%=vehicle.id%></th>
-            <td><%=vehicle.brand.name%></td>
-            <td><%=vehicle.car.name%></td>
+            <td><%=vehicle.brand.name if vehicle.brand%></td>
+            <td><%=vehicle.car.name if vehicle.car%></td>
             <td><%=vehicle.year%></td>
             <td><%=vehicle.reg_no%></td>
             <td><%=vehicle.created_at%></td>
