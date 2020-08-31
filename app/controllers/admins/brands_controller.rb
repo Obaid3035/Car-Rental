@@ -14,7 +14,7 @@ module Admins
     def create
       @brand = Brand.new(brand_params)
       if @brand.save
-        redirect_to admins_brands_path, notice: 'Brand added!'
+        redirect_to new_admins_vehicle_path, notice: 'Brand added!'
       else
         render 'new', layout: false
       end

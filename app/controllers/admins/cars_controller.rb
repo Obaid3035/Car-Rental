@@ -13,7 +13,7 @@ module Admins
     def create
       @car = Car.new(car_params)
       if @car.save!
-        redirect_to admins_cars_path
+        redirect_to new_admins_vehicle_path
       else
         render 'new', layout: false, status: :ok
       end

@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   devise_for :admins
 
   devise_scope :admin do
@@ -9,6 +8,7 @@ Rails.application.routes.draw do
   namespace :admins do
     root 'homes#dashboard'
     resources :brands
+    resources :vehicles
     resources :cars
     resources :bookings
   end

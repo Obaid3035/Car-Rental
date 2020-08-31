@@ -10,6 +10,15 @@ export default class extends Controller {
     $('#booking_car_id').select2({
       theme: "classic"
     });
+    $('#vehicle_car_id').select2({
+      theme: "classic"
+    });
+    $('#vehicle_brand_id').select2({
+      theme: "classic"
+    });
+    $('#vehicle_year').select2({
+      theme: "classic"
+    });
 
   }
 }
